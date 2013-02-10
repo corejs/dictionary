@@ -1,0 +1,10 @@
+{
+  "name": "dictionary",
+  "repo": "corejs/dictionary",
+  "description": "dictionary",
+  "version": "0.1.0",
+  "dependencies": {},
+  "scripts": ["index.js"],
+  "keywords": ["dictionary"],
+  "license": "MIT"
+}
