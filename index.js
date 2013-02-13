@@ -1,33 +1,33 @@
 module.exports = dictionary
 
-var dictionary = function () {
-  return new Dictionary();
+var dictionary = function (terms) {
+  return new Dictionary(terms);
 };
 
-var Dictionary = function () {
-  this.values = {};
+var Dictionary = function (terms) {
+  this.terms = terms || {};
 };
 
 Dictionary.prototype.set = function (key, value) {
-  this.values[key] = value;
+  this.terms[key] = value;
   return this;
 };
 
 Dictionary.prototype.get = function (key) {
-  return this.values[key];
+  return this.terms[key];
 };
 
 Dictionary.prototype.has = function (key) {
-  return has(this.values, key);
+  return has(this.terms, key);
 };
 
 Dictionary.prototype.each = function (fn) {
-  return each(this.values, fn);
+  return each(this.terms, fn);
 };
 
 Dictionary.prototype.keys = function () {
   var keys = [];
-  each(this.values, function (value, key) {
+  each(this.terms, function (value, key) {
     keys.push(key);
   });
   return keys;
