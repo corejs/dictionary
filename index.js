@@ -1,6 +1,4 @@
-module.exports = dictionary
-
-var dictionary = function (terms) {
+var dictionary = module.exports = function (terms) {
   return new Dictionary(terms);
 };
 
@@ -15,6 +13,11 @@ Dictionary.prototype.set = function (key, value) {
 
 Dictionary.prototype.get = function (key) {
   return this.terms[key];
+};
+
+Dictionary.prototype.del = function (key) {
+  delete this.terms[key];
+  return this;
 };
 
 Dictionary.prototype.has = function (key) {
